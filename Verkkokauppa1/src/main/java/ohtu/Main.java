@@ -5,13 +5,15 @@ import ohtu.verkkokauppa.Kirjanpito;
 import ohtu.verkkokauppa.Pankki;
 import ohtu.verkkokauppa.Varasto;
 import ohtu.verkkokauppa.Viitegeneraattori;
+import ohtu.verkkokauppa.IKirjanpito;
 
 public class Main {
 
     public static void main(String[] args) {
-        Pankki pankki = new Pankki();
-        Varasto varasto = new Varasto();
         Kirjanpito kirjanpito = new Kirjanpito();
+        Pankki pankki = new Pankki(kirjanpito);
+        Varasto varasto = new Varasto(kirjanpito);
+        //Kirjanpito kirjanpito = new Kirjanpito();
         Viitegeneraattori generaattori = new Viitegeneraattori();
         Kauppa kauppa = new Kauppa(varasto, pankki, generaattori);
 

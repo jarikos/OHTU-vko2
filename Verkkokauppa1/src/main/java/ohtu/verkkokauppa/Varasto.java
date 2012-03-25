@@ -14,11 +14,11 @@ public class Varasto implements IVarasto{
 //        return instanssi;
 //    }
     
-    private Kirjanpito kirjanpito;
+    private IKirjanpito kirjanpito;
     private HashMap<Tuote, Integer> saldot;  
     
-    public Varasto() {
-        kirjanpito = new Kirjanpito();
+    public Varasto(IKirjanpito kirjanpito) {
+        this.kirjanpito = kirjanpito;
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
     }
