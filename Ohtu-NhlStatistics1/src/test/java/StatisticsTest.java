@@ -40,11 +40,11 @@ public class StatisticsTest {
         assertEquals("[Lemieux              PIT 45 + 54 = 99]", stats.team("PIT").toString());
     }
     
-//    @Test
-//    public void testSetAssist(){
-//        Player player = new Player("Crazy","KRO",6,4);
-//        player.setAssists(2);
-//        
-//        assertEquals("8",player.getAssists());
-//    }
+    @Test
+    public void testSetAssist(){
+        Player player = new Player("Crazy","KRO",6,4);
+        player.setAssists(2);
+        
+        assertEquals("8",player.getAssists());
+    }
 } 
