@@ -2,23 +2,23 @@ package ohtu.verkkokauppa;
 
 import java.util.*;
 
-public class Varasto {
+public class Varasto implements IVarasto{
 
-    private static Varasto instanssi;
-
-    public static Varasto getInstance() {
-        if (instanssi == null) {
-            instanssi = new Varasto();
-        }
-
-        return instanssi;
-    }
+//    private static Varasto instanssi;
+//
+//    public static Varasto getInstance() {
+//        if (instanssi == null) {
+//            instanssi = new Varasto();
+//        }
+//
+//        return instanssi;
+//    }
     
     private Kirjanpito kirjanpito;
     private HashMap<Tuote, Integer> saldot;  
     
-    private Varasto() {
-        kirjanpito = Kirjanpito.getInstance();
+    public Varasto() {
+        kirjanpito = new Kirjanpito();
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
     }
@@ -45,7 +45,7 @@ public class Varasto {
         kirjanpito.lisaaTapahtuma("palautettiin varastoon "+t);
     }    
     
-    private void alustaTuotteet() {
+    public void alustaTuotteet() {
         saldot.put(new Tuote(1, "Koff Portteri", 3), 100);
         saldot.put(new Tuote(2, "Fink Bräu I", 1), 25);
         saldot.put(new Tuote(3, "Sierra Nevada Pale Ale", 5), 30);
